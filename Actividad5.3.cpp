@@ -48,7 +48,6 @@ void* leftBabCross(void* arg) {
 		pthread_mutex_unlock(&mutexRope);
 		pthread_cond_broadcast(&condRopeLeft);
 	}
-	//sleep(2);
 	pthread_exit(NULL);
 }
 
@@ -67,7 +66,7 @@ void* rightBabCross(void* arg) {
 	rightBaboonsCrossed++;
 	printf("Right baboon crossing... | ");
 	printf("Num Right Baboons in Rope: %d | ", rightBabRope);
-	printf("Total Left Baboons Crossed: %d\n", rightBaboonsCrossed);
+	printf("Total Right Baboons Crossed: %d\n", rightBaboonsCrossed);
 	if (rightBabRope == MAXBabRope) {
 		leftBabRope = 0;
 		pthread_mutex_unlock(&mutexRope);
@@ -77,7 +76,6 @@ void* rightBabCross(void* arg) {
 		pthread_mutex_unlock(&mutexRope);
 		pthread_cond_broadcast(&condRopeRight);
 	}
-	//sleep(5);
 	pthread_exit(NULL);
 }
 
@@ -93,14 +91,11 @@ int main(int argc, char* argv[]) {
 			perror("Failed to create thread Baboons Left");
 		}
 	}
-	//sleep(2);
 	for (i = 0; i < MAXBaboons; i++) {
 		if (pthread_create(&baboons[i], NULL, rightBabCross, NULL) != 0) {
 			perror("Failed to create thread Baboons right");
 		}
 	}
-	//sleep(3);
-	
 	for (i = 0; i < MAXBaboons; i++) {
 		if (pthread_join(baboons[i], NULL) != 0) {
 			perror("Failed to join threads");
