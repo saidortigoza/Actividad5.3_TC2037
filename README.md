@@ -6,6 +6,6 @@ TC2037.601
 
 Pedro Oscar Pérez Murueta
 
-## Authors:
+### Authors:
 - Miguel Tang Feng, A01610836
 - Said Ortigoza Trujillo, A01707430
