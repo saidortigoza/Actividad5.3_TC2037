@@ -12,4 +12,5 @@ Pedro Oscar Pérez Murueta
 
 To compile:
 g++ Actividad5.3.cpp -lpthread -o app
+
 ./app
