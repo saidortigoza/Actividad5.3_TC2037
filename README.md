@@ -2,7 +2,7 @@
 
 ### Implementación de métodos computacionales
 
-### TC2037.601
+TC2037.601
 
 Pedro Oscar Pérez Murueta
 
